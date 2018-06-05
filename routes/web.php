@@ -20,3 +20,6 @@ Route::resource('tasks', 'tasksController');
 Route::get('/', function () {
     return view('welcome');
 });
+Route::group(['middleware' => ['auth']], function () {
+    Route::resource('users', 'UsersController', ['only' => ['index', 'show']]);
+});
