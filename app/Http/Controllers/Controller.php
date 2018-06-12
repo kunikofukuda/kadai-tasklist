@@ -12,7 +12,7 @@ class Controller extends BaseController
     use AuthorizesRequests, DispatchesJobs, ValidatesRequests;
 
     public function counts($user) {
-        $count_tasklists = $user->tasklists()->count();
+        $count_tasklists = $user->tasks()->count();
 
         return [
             'count_tasklists' => $count_tasklists,
